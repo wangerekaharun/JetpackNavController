@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/nav_graph">
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+>
+    <fragment
+            android:id="@+id/bookSearchFragment"
+            android:name="ke.co.appslab.jetpacknavcontroller.ui.booksearch.BookSearchFragment"
+            android:label="Book Search Fragment"
+            tools:layout="@layout/fragment_book_search">
+        <action
+                android:id="@+id/actionBookDetails"
+                app:destination="@id/workDetailsFragment" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/workDetailsFragment"
+            android:name="ke.co.appslab.jetpacknavcontroller.ui.workdetails.WorkDetailsFragment"
+            android:label="work_details_fragment"
+            tools:layout="@layout/fragment_work_details">
+    </fragment>
 
 </navigation>

@@ -5,14 +5,17 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.Navigation.findNavController
+import ke.co.appslab.jetpacknavcontroller.utils.HomeActivityDelegate
 
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_home.*
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(),HomeActivityDelegate {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
@@ -35,5 +38,15 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean = findNavController(this, R.id.navHostFragment).navigateUp()
+
+    override fun setupNavDrawer(toolbar: Toolbar) {
+
+    }
+
+    override fun enableNavDrawer(enable: Boolean) {
+
     }
 }
