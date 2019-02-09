@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import ke.co.appslab.jetpacknavcontroller.db.dao.FavoritesDao
 import ke.co.appslab.jetpacknavcontroller.models.Work
 
 @Database(entities = [Work::class], version = 1)
@@ -17,5 +18,7 @@ abstract class AppDataBase : RoomDatabase() {
                 .fallbackToDestructiveMigration()
                 .build()
     }
+
+    abstract fun favoritesDao(): FavoritesDao
 
 }

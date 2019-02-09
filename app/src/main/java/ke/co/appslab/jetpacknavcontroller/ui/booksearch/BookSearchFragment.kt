@@ -10,10 +10,13 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import ke.co.appslab.jetpacknavcontroller.R
+import ke.co.appslab.jetpacknavcontroller.utils.initToolbar
 import ke.co.appslab.jetpacknavcontroller.utils.HomeActivityDelegate
+import ke.co.appslab.jetpacknavcontroller.utils.NetworkState
 import ke.co.appslab.jetpacknavcontroller.utils.SearchCriteria
 import kotlinx.android.synthetic.main.fragment_book_search.*
 
@@ -22,7 +25,7 @@ class BookSearchFragment : Fragment() {
 
     private lateinit var homeActivityDelegate: HomeActivityDelegate
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
 
         try {
@@ -90,8 +93,7 @@ class BookSearchFragment : Fragment() {
                 viewModel.updateSearchCriteria(SearchCriteria.valueOf(spnCriteria.adapter.getItem(p2) as String))
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
         }
     }
 
@@ -101,8 +103,6 @@ class BookSearchFragment : Fragment() {
         }
 
         rvBooks.adapter = adapter
-
-
         viewModel.data.observe(this, Observer {
             adapter.submitList(it)
         })

@@ -7,15 +7,18 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiClient {
-    fun create(): ApiClient = create(HttpUrl.parse(BASE_URL)!!)
-    fun create(httpUrl: HttpUrl): ApiClient {
-        val client = OkHttpClient.Builder()
+
+    private val client = OkHttpClient.Builder()
             .build()
-        return Retrofit.Builder()
-            .baseUrl(httpUrl)
-            .client(client)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(ApiClient::class.java)
+    var retrofit: Retrofit? = null
+    fun getClient(): Retrofit {
+        when (retrofit) {
+            null -> retrofit = Retrofit.Builder()
+                .baseUrl(HttpUrl.parse(BASE_URL)!!)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+        }
+        return retrofit as Retrofit
     }
 }

@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.item_work.view.*
 
 class WorksAdapter(
     private val glide: RequestManager,
-    val itemClickListener: (Work) -> Unit
+    private val itemClickListener: (Work) -> Unit
 ) : PagedListAdapter<Work, WorksAdapter.MyViewHolder>(WORK_COMPARATOR) {
 
     inner class MyViewHolder(itemView: View,val itemClickListener: (Work) -> Unit) : RecyclerView.ViewHolder(itemView) {
