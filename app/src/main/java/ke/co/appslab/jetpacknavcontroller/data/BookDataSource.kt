@@ -14,7 +14,8 @@ import java.io.IOException
 
 class BookDataSource(
     private val apiService: ApiService,
-    private val work: Work?): PageKeyedDataSource<Int, Book>() {
+    private val work: Work?
+) : PageKeyedDataSource<Int, Book>() {
     val networkState = MutableLiveData<NetworkState>()
 
     fun getNextPageKey(startIndex: Int, count: Int): Int? {
@@ -39,11 +40,17 @@ class BookDataSource(
         return apiService.getBook(query)
     }
 
-    override fun loadBefore(params: PageKeyedDataSource.LoadParams<Int>, callback: PageKeyedDataSource.LoadCallback<Int, Book>) {
+    override fun loadBefore(
+        params: PageKeyedDataSource.LoadParams<Int>,
+        callback: PageKeyedDataSource.LoadCallback<Int, Book>
+    ) {
         // Ignored, since we only ever append to our initial load
     }
 
-    override fun loadInitial(params: PageKeyedDataSource.LoadInitialParams<Int>, callback: PageKeyedDataSource.LoadInitialCallback<Int, Book>) {
+    override fun loadInitial(
+        params: PageKeyedDataSource.LoadInitialParams<Int>,
+        callback: PageKeyedDataSource.LoadInitialCallback<Int, Book>
+    ) {
         networkState.postValue(NetworkState.LOADING)
 
         try {
@@ -68,11 +75,17 @@ class BookDataSource(
         }
     }
 
-    override fun loadAfter(params: PageKeyedDataSource.LoadParams<Int>, callback: PageKeyedDataSource.LoadCallback<Int, Book>) {
+    override fun loadAfter(
+        params: PageKeyedDataSource.LoadParams<Int>,
+        callback: PageKeyedDataSource.LoadCallback<Int, Book>
+    ) {
         createRequest(params.key, params.requestedLoadSize)
             .enqueue(object : Callback<HashMap<String, Book>> {
 
-                override fun onResponse(call: Call<HashMap<String, Book>>?, response: Response<HashMap<String, Book>>?) {
+                override fun onResponse(
+                    call: Call<HashMap<String, Book>>?,
+                    response: Response<HashMap<String, Book>>?
+                ) {
                     when {
                         response?.isSuccessful == true -> {
                             val data = response.body()

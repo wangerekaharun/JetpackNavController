@@ -32,7 +32,6 @@
                 <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
                         android:layout_marginStart="@dimen/activity_horizontal_margin"
                         android:contentDescription="@string/book_search"
                         android:src="@drawable/ic_search_white_24dp" />

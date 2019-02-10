@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import ke.co.appslab.jetpacknavcontroller.db.dao.FavoritesDao
 import ke.co.appslab.jetpacknavcontroller.models.Work
 
-@Database(entities = [Work::class], version = 1)
+@Database(entities = [Work::class], version = 1, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
     companion object {
 

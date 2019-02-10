@@ -1,7 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 tools:context=".ui.booksearch.BookSearchFragment">
 
-</LinearLayout>
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:title="The Lord of the Rings"
+                    app:layout_collapseMode="pin" />
+
+            <ImageView
+                    android:id="@+id/ivCover"
+                    android:contentDescription="@string/book_cover"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/toolbar"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:scaleType="centerInside"
+                    tools:src="@drawable/book_cover_missing" />
+
+            <TextView
+                    android:id="@+id/tvAuthorsLabel"
+                    style="@style/TextAppearance.AppBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/toolbar"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_toEndOf="@+id/ivCover"
+                    android:text="@string/by" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAuthors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvAuthorsLabel"
+                    android:layout_alignStart="@+id/tvAuthorsLabel"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/margin_tiny"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:nestedScrollingEnabled="false"
+                    android:scrollbars="none"
+                    tools:listitem="@layout/item_author"
+                    tools:itemCount="1" />
+
+            <TextView
+                    android:id="@+id/tvEditions"
+                    style="@style/TextAppearance.AppBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rvAuthors"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="end"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingEnd="@dimen/activity_horizontal_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingStart="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    tools:text="11 Editions available" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEditions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:listitem="@layout/item_book">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

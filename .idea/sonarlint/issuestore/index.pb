@@ -29,7 +29,5 @@ Kapp/src/main/java/ke/co/appslab/jetpacknavcontroller/data/WorkDataSource.kt,8/
 Yapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/booksearch/BookSearchViewModel.kt,b/c/bc86d85c47df62178e57a71e0681ee90c56ad80d
 ‚
 Rapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/booksearch/WorksAdapter.kt,c/2/c21cd9527a785604efcddd1027cdc10d9486bb7a
-„
-Tapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/workdetails/FragmentUtils.kt,3/7/375109ff1afcbc89d0beb67952457adb739fd764
 ˆ
 Xapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/booksearch/BookSearchFragment.kt,d/b/dbaab207bf11b28cd9c205bf4aa117f46f294ced

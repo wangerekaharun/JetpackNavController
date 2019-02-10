@@ -12,11 +12,11 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.IOException
 
-class WorkDataSource (
+class WorkDataSource(
     private val apiService: ApiService,
     private val searchTerm: String,
     private val searchCriteria: SearchCriteria
-): PageKeyedDataSource<Int, Work>() {
+) : PageKeyedDataSource<Int, Work>() {
 
     val networkState = MutableLiveData<NetworkState>()
 
@@ -27,11 +27,12 @@ class WorkDataSource (
         }
     }
 
-    private fun createRequest(searchTerm: String, searchCriteria: SearchCriteria, pageKey: Int) = when (searchCriteria) {
-        SearchCriteria.AUTHOR -> apiService.searchByAuthor(searchTerm, pageKey)
-        SearchCriteria.TITLE -> apiService.searchByTitle(searchTerm, pageKey)
-        else -> apiService.search(searchTerm, pageKey)
-    }
+    private fun createRequest(searchTerm: String, searchCriteria: SearchCriteria, pageKey: Int) =
+        when (searchCriteria) {
+            SearchCriteria.AUTHOR -> apiService.searchByAuthor(searchTerm, pageKey)
+            SearchCriteria.TITLE -> apiService.searchByTitle(searchTerm, pageKey)
+            else -> apiService.search(searchTerm, pageKey)
+        }
 
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Work>) {
         // Ignored, since we only ever append to our initial load
@@ -93,7 +94,8 @@ class WorkDataSource (
                         )
                     }
                     else -> networkState.postValue(
-                        NetworkState.error("error code: ${response?.code()}"))
+                        NetworkState.error("error code: ${response?.code()}")
+                    )
                 }
             }
 

@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:listitem="@layout/item_work"
-            tools:itemCount="1">
+            tools:itemCount="10">
 
     </androidx.recyclerview.widget.RecyclerView>
 

@@ -2,6 +2,7 @@ package ke.co.appslab.jetpacknavcontroller.ui.booksearch
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,8 +13,11 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import ke.co.appslab.jetpacknavcontroller.R
+import ke.co.appslab.jetpacknavcontroller.ui.workdetails.WorkDetailsViewModel
 import ke.co.appslab.jetpacknavcontroller.utils.initToolbar
 import ke.co.appslab.jetpacknavcontroller.utils.HomeActivityDelegate
 import ke.co.appslab.jetpacknavcontroller.utils.NetworkState
@@ -35,8 +39,10 @@ class BookSearchFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_book_search, container, false)
     }
 
@@ -98,11 +104,14 @@ class BookSearchFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        val adapter = WorksAdapter(Glide.with(this)){
-
+        val adapter = WorksAdapter(Glide.with(this)) {
+            findNavController().navigate(R.id.actionBookDetails)
+            WorkDetailsViewModel.createArguments(it)
+            Log.d("Work", it.toString())
         }
 
         rvBooks.adapter = adapter
+        rvBooks.layoutManager = LinearLayoutManager(activity!!)
         viewModel.data.observe(this, Observer {
             adapter.submitList(it)
         })
