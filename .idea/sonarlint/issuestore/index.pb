@@ -31,3 +31,11 @@ Yapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/booksearch/BookSearchVi
 Rapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/booksearch/WorksAdapter.kt,c/2/c21cd9527a785604efcddd1027cdc10d9486bb7a
 ˆ
 Xapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/booksearch/BookSearchFragment.kt,d/b/dbaab207bf11b28cd9c205bf4aa117f46f294ced
+ƒ
+Sapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/workdetails/BooksAdapter.kt,9/5/95397ced4438c5c4dcc0579d34e28a56bfb5ee7d
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+Š
+Zapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/workdetails/WorkDetailsFragment.kt,b/1/b19061e7cbf22dc5d028885a0426c5448f6a8547
+‹
+[app/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/workdetails/WorkDetailsViewModel.kt,d/b/dba7c853374b6148f89b80ba53d22634d3511057

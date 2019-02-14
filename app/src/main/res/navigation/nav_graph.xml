@@ -24,12 +24,16 @@
     </fragment>
     <fragment android:id="@+id/favoritesFragment"
               android:name="ke.co.appslab.jetpacknavcontroller.ui.favorites.FavoritesFragment"
-              android:label="FavoritesFragment">
+              android:label="FavoritesFragment"
+              tools:layout="@layout/fragment_favorites"
+    >
         <action android:id="@+id/actionBookDetails"
                 app:destination="@id/workDetailsFragment"/>
     </fragment>
     <fragment android:id="@+id/bookDetailsFragment"
               android:name="ke.co.appslab.jetpacknavcontroller.ui.bookdetails.BookDetailsFragment"
-              android:label="BookDetailsFragment"/>
+              android:label="BookDetailsFragment"
+              tools:layout="@layout/fragment_book_details"
+    />
 
 </navigation>

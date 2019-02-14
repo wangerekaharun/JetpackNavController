@@ -10,11 +10,13 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import ke.co.appslab.jetpacknavcontroller.R
 
-class LauncherFragment : Fragment(),LifecycleObserver {
+class LauncherFragment : Fragment(), LifecycleObserver {
     private lateinit var viewModel: LauncherViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
 
         return inflater.inflate(R.layout.fragment_launcher, container, false)
