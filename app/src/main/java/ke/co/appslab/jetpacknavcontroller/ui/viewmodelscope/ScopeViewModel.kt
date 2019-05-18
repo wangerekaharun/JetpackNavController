@@ -1,4 +1,16 @@
 package ke.co.appslab.jetpacknavcontroller.ui.viewmodelscope
 
-class ScopeViewModel {
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import ke.co.appslab.jetpacknavcontroller.repository.DataRepo
+import kotlinx.coroutines.launch
+
+class ScopeViewModel : ViewModel() {
+    private val dataRepo = DataRepo()
+
+    fun loadData(){
+        viewModelScope.launch {
+            dataRepo.loadData()
+        }
+    }
 }
