@@ -36,4 +36,12 @@
               tools:layout="@layout/fragment_book_details"
     />
 
+    <dialog android:id="@+id/errorDialogFragment"
+        android:name="ke.co.appslab.jetpacknavcontroller.ui.bookdetails.BookDetailsFragment"
+        android:label="BookDetailsFragment"
+        tools:layout="@layout/fragment_book_details">
+            <argument android:name="Error"  android:defaultValue="@null"/>
+    </dialog>
+
+    <navigation android:id="@+id/onboarding_graph"/>
 </navigation>
