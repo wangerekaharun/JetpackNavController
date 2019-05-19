@@ -43,9 +43,8 @@ interface SongsDao {
         OR artistName LIKE '%' || :query || '%'
     """
     )
-    fun searchSong(query: String): List<Song> {
-        return emptyList()
-    }
+    fun searchSong(query: String): List<Song>
+
 
 
     //New in Room
@@ -56,9 +55,7 @@ interface SongsDao {
         WHERE Song MATCH :query
     """
     )
-    fun searchSongNew(query: String): List<Song> {
-        return emptyList()
-    }
+    fun searchSongNew(query: String): List<Song>
 
     //you can now use this view as if it was another table
     //shows a list of albums with aggregated information

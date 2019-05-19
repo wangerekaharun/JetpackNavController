@@ -3,5 +3,13 @@ package ke.co.appslab.jetpacknavcontroller.ui.onboarding
 import androidx.lifecycle.ViewModel
 
 class OnboardingViewModel : ViewModel() {
-    var username : String?=null
+    lateinit var userName: String
+
+    fun setUsername(name: String) {
+        userName = name
+    }
+
+    fun getuserName(): String {
+        return userName
+    }
 }

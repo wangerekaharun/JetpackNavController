@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface ApiService {
 
     @GET("api/books?format=json&jscmd=data")
-    fun getBook(@Query("bibkeys") searchQuery: String): Call<HashMap<String, Book>>
+   suspend fun getBook(@Query("bibkeys") searchQuery: String): Call<HashMap<String, Book>>
 
     @GET("search.json")
     fun searchByTitle(

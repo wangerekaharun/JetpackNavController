@@ -20,7 +20,7 @@ class SetupFragment : Fragment() {
     }
 
     fun onSetupComplete(username: String) {
-        onboaardingViewModel.username = username
+        onboaardingViewModel.setUsername(username)
     }
 
 

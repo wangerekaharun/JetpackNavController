@@ -52,7 +52,6 @@ class BookSearchFragment : Fragment() {
 
         viewModel.updateSearchCriteria(SearchCriteria.ALL)
 
-        initToolbar(toolbar, R.string.book_search, false)
         homeActivityDelegate.setupNavDrawer(toolbar)
         homeActivityDelegate.enableNavDrawer(true)
 
