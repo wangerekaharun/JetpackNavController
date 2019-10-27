@@ -8,6 +8,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 import ke.co.appslab.jetpacknavcontroller.models.Work
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavoritesDao {
@@ -25,4 +26,7 @@ interface FavoritesDao {
 
     @Delete
     fun removeFavorite(work: Work)
+
+    @Query("SELECT * FROM Work")
+    fun getAll(): Flow<Work>
 }
