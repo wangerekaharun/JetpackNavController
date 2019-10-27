@@ -55,3 +55,7 @@ Sapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/onboarding/SetupFragmen
 \app/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/viewmodelstate/SavedStateFragment.kt,e/c/ec0c6132889f6cc7dd88ff5f65b5a2293e4d438f
 ˆ
 Xapp/src/main/java/ke/co/appslab/jetpacknavcontroller/ui/viewmodelscope/ScopeViewModel.kt,a/5/a59b754143498fdf9586870b35b08c6a26dcf8cb
+w
+Gapp/src/main/java/ke/co/appslab/jetpacknavcontroller/db/dao/SongsDao.kt,8/c/8cc95096e54c70d21e59c850b35fab5e6cc59cd9
+x
+Happ/src/main/java/ke/co/appslab/jetpacknavcontroller/models/AlbumItem.kt,c/e/ce7679dbaf42af85f51627a2e2abd8013fb4c156
