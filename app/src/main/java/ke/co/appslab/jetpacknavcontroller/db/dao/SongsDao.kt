@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
 import ke.co.appslab.jetpacknavcontroller.models.AlbumItem
+import ke.co.appslab.jetpacknavcontroller.models.NameAndId
 import ke.co.appslab.jetpacknavcontroller.models.Song
 
 @Dao
@@ -13,8 +14,14 @@ interface SongsDao {
     @Query("SELECT * FROM song WHERE songId = :songId")
     suspend fun getSong(songId: String): Song
 
+    @Query("SELECT * FROM song")
+    suspend fun getAllSongs(): List<NameAndId>
+
     @Insert
     suspend fun insertSong(song: Song)
+
+    @Insert(targetEntity = Song::class)
+    fun inserNameamdId(nameAndId : NameAndId)
 
     @Transaction
     suspend fun deleteShortSongs(): List<Song> {
