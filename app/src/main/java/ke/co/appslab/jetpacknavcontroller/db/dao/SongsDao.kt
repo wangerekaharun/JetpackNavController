@@ -20,8 +20,8 @@ interface SongsDao {
     @Insert
     suspend fun insertSong(song: Song)
 
-    @Insert(targetEntity = Song::class)
-    fun inserNameamdId(nameAndId : NameAndId)
+//    @Insert(targetEntity = Song::class)
+//    fun inserNameamdId(nameAndId : NameAndId)
 
     @Transaction
     suspend fun deleteShortSongs(): List<Song> {
